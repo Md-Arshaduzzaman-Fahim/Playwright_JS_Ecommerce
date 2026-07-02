@@ -3,10 +3,10 @@ import { SignupPage } from "./SignupPage";
 export class LoginPage{
     constructor(page){
         this.page = page;
-        this.verifyloginpagetitle = "//h2[text()='New User Signup!']"
-        this.name = "//input[@data-qa='signup-name']";
-        this.email = "//input[@data-qa='signup-email']";
-        this.button = "Signup";
+        this.verifyloginpagetitle = this.page.locator("//h2[text()='New User Signup!']");
+        this.name = this.page.locator("//input[@data-qa='signup-name']");
+        this.email = this.page.locator("//input[@data-qa='signup-email']");
+        this.button = this.page.getByRole('button',{name:"Signup"});
     }
 
     async verifyloginpage(){
@@ -14,9 +14,9 @@ export class LoginPage{
     }
 
     async navigateToSignup(name,email){
-        await this.page.locator(this.name).fill(name);
-        await this.page.locator(this.email).fill(email);
-        await this.page.getByRole('button',{name:this.button}).click();
+        await this.name.fill(name);
+        await this.email.fill(email);
+        await this.button.click();
         return new SignupPage(this.page);
     }
 }
