@@ -10,7 +10,7 @@ export class LoginPage{
     }
 
     async verifyloginpage(){
-       return await this.page.locator(this.verifyloginpagetitle);
+       return await this.verifyloginpagetitle;
     }
 
     async navigateToSignup(name,email){
