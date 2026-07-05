@@ -23,9 +23,9 @@ import users from "../Test-Data/users.json";
 test("Test Case 1: Register User", async({homepage, loginpage})=>{
 await expect(await homepage.verifyTloginLink()).toBeVisible();
 await expect(await loginpage.verifyloginpage()).toBeVisible();
-const signuppage = await loginpage.navigateToSignup(users.signup2.username, users.signup2.email);
+const signuppage = await loginpage.navigateToSignup(users.signup1.username, users.signup1.email);
 await expect(await signuppage.verifySignupPage()).toBe(true);
-const success_message_page = await signuppage.createAccount(users.userInfo2)
+const success_message_page = await signuppage.createAccount(users.userInfo1)
 await expect(await success_message_page.verifySuccessMessage()).toBe(true);
 await expect(await success_message_page.verifySuccessfulNavigationToHomePage()).toBe(true);
 })
