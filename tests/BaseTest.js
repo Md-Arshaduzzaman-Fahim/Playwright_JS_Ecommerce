@@ -3,14 +3,20 @@ import{HomePage} from "../Pages/HomePage"
 
 
 export const test = base.extend({
-    homepage: async ({browser}, use) => {
-    browser = await chromium.launch({ headless: false, channel: "chrome" });
-    const page = await browser.newPage();
+    homepage: async ({page}, use) => {
+    // browser = await chromium.launch({ headless: false, channel: "chrome" });
+    // const page = await browser.newPage();
     await page.goto('https://automationexercise.com/');
     const homepage = new HomePage(page);
     await use(homepage);
 
-    await page.close();
+    // await page.close();
+    // await browser.close();
+    },
+
+    loginpage: async({homepage}, use) => {
+       const loginpage = await homepage.navigateToLoginSignupPage();
+        await use(loginpage);
     }
 })
 
