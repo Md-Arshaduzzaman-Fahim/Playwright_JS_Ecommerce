@@ -1,6 +1,7 @@
 import { test, expect } from "./BaseTest";
 import{LoginPage} from "../Pages/LoginPage";
 import { SuccessfulAccountCreatePage } from "../Pages/SuccessfulAccountCreatePage";
+import users from "../Test-Data/users.json";
 
 let loginpage;
 let signuppage;
@@ -20,10 +21,9 @@ await expect(await loginpage.verifyloginpage()).toBeVisible();
 })
 
 test("signup test", async()=>{
-signuppage = await loginpage.navigateToSignup("Gojo","Gojoxsatoru271@gmail.com");
-await expect(await signuppage.verifySignupPage()).toBeVisible();
-success_message_page = await signuppage.createAccount("1234", "10", "October", "1997", "Gojo", "Satoru", "Jujutsu High", 
-  "11/6 miyashima street", "Australia", "Tokyo", "Shinjuku", "1200", "99876546752")
+signuppage = await loginpage.navigateToSignup(users.signup2.username, users.signup2.email);
+await expect(await signuppage.verifySignupPage()).toBe(true);
+success_message_page = await signuppage.createAccount(users.userInfo1)
 await expect(await success_message_page.verifySuccessMessage()).toBe(true);
 await expect(await success_message_page.verifySuccessfulNavigationToHomePage()).toBe(true);
 })

@@ -1,0 +1,44 @@
+{
+"signup1":{
+    "username": "Gojo",
+    "email": "Gojoxsatoru271@gmail.com"
+},
+
+"signup2":{
+    "username": "xinon",
+    "email": "xinon.reis@gmail.com"
+},
+
+"userInfo1": {
+    "password": "1234", 
+    "birthdate": "10", 
+    "birthmonth": "October", 
+    "birthyear": "1997", 
+    "fname": "Gojo", 
+    "lname": "Satoru", 
+    "company": "Jujutsu High", 
+    "address": "11/6 miyashima street", 
+    "country": "Australia", 
+    "state": "Tokyo", 
+    "city": "Shinjuku", 
+    "zipcode": "1200", 
+    "mobile": "99876546752"
+},
+
+"userInfo2": {
+    "password": "1234", 
+    "birthdate": "11", 
+    "birthmonth": "July", 
+    "birthyear": "1995", 
+    "fname": "xinon", 
+    "lname": "reis", 
+    "company": "Jujutsu High", 
+    "address": "11/6 miyashima street", 
+    "country": "Australia", 
+    "state": "Tokyo", 
+    "city": "Shinjuku", 
+    "zipcode": "1200", 
+    "mobile": "99876546752"
+}
+
+}

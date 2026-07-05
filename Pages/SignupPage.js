@@ -23,25 +23,25 @@ export class SignupPage{
     }
 
     async verifySignupPage(){
-       return await this.header;
+       return await this.header.isVisible();
     }
 
-    async createAccount(password, birthdate, birthmonth, birthyear, firstname, lastname, company, address1, country, state, city, zipcode, mobile){
+    async createAccount(user){
         await this.title.check();
-        await this.passwrd.fill(password);
-        await this.birth_date.selectOption({value: birthdate});
-        await this.birth_month.selectOption({label: birthmonth})
-        await this.birth_year.selectOption({value: birthyear})
+        await this.passwrd.fill(user.password);
+        await this.birth_date.selectOption({value: user.birthdate});
+        await this.birth_month.selectOption({label: user.birthmonth})
+        await this.birth_year.selectOption({value: user.birthyear})
         await this.offer.check();
-        await this.first_name.fill(firstname);
-        await this.last_name.fill(lastname);
-        await this.company.fill(company);
-        await this.address1.fill(address1);
-        await this.country.selectOption({value: country});
-        await this.state.fill(state);
-        await this.city.fill(city);
-        await this.zipcode.fill(zipcode);
-        await this.mobile_number.fill(mobile);
+        await this.first_name.fill(user.fname);
+        await this.last_name.fill(user.lname);
+        await this.company.fill(user.company);
+        await this.address1.fill(user.address);
+        await this.country.selectOption({value: user.country});
+        await this.state.fill(user.state);
+        await this.city.fill(user.city);
+        await this.zipcode.fill(user.zipcode);
+        await this.mobile_number.fill(user.mobile);
         await this.create_button.click();
 
         return new SuccessfulAccountCreatePage(this.page);
