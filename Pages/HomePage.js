@@ -5,6 +5,13 @@ export class HomePage{
         this.page = page;
         this.header = this.page.locator("//h1/span[contains(text(), 'Automation')]");
         this.login_signup_link = this.page.locator("//a[text()=' Signup / Login']");  
+
+        this.loggedin_user = this.page.locator("//a/b[text()]");
+        this.logoutBtn = this.page.locator("//a[text()=' Logout']");
+
+        this.delete_account = this.page.locator("//a[text()=' Delete Account']");
+
+        this.account_delete_msg = this.page.locator("//h2/b[text()]");
     }
 
     async verifyTloginLink(){
@@ -17,5 +24,19 @@ export class HomePage{
     }
 
 
+    async verifySuccessfulLogin(){
+      return await this.loggedin_user.textContent()
+    }
 
+    async logout(){
+        await this.logoutBtn.click();
+        await this.page.waitForURL("https://automationexercise.com/login");
+        return this.page.url();
+    }
+
+
+    async deleteAccount(){
+        await  this.delete_account.click();
+      return  await this.account_delete_msg.textContent();
+    }
 }

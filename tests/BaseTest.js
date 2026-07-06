@@ -1,12 +1,12 @@
 import{test as base, expect, chromium} from "@playwright/test";
-import{HomePage} from "../Pages/HomePage"
-
+import{HomePage} from "../Pages/HomePage";
+import users from "../Test-Data/users.json";
 
 export const test = base.extend({
     homepage: async ({page}, use) => {
     // browser = await chromium.launch({ headless: false, channel: "chrome" });
     // const page = await browser.newPage();
-    await page.goto('https://automationexercise.com/');
+    await page.goto('/');
     const homepage = new HomePage(page);
     await use(homepage);
 
@@ -17,6 +17,11 @@ export const test = base.extend({
     loginpage: async({homepage}, use) => {
        const loginpage = await homepage.navigateToLoginSignupPage();
         await use(loginpage);
+    },
+
+    loggedHomepage: async({loginpage}, use) =>{
+        const loggedHomepage = await loginpage.login(users.signup1.email, users.userInfo1.password);
+        await use(loggedHomepage);
     }
 })
 

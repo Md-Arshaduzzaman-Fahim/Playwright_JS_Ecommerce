@@ -39,6 +39,12 @@
     "city": "Shinjuku", 
     "zipcode": "1200", 
     "mobile": "99876546752"
+},
+
+
+"wrongUserCreds": {
+    "email": "abcdefg@ggwp",
+    "password": "1239"
 }
 
 }
