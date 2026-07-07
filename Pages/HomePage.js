@@ -1,4 +1,5 @@
 import{LoginPage} from "../Pages/LoginPage"
+import { ContactUsPage } from "./ContactUsPage";
 
 export class HomePage{
     constructor(page){
@@ -12,6 +13,8 @@ export class HomePage{
         this.delete_account = this.page.locator("//a[text()=' Delete Account']");
 
         this.account_delete_msg = this.page.locator("//h2/b[text()]");
+
+        this.contact_us_link = this.page.getByRole("link", {name: " Contact us"});
     }
 
     async verifyTloginLink(){
@@ -39,4 +42,12 @@ export class HomePage{
         await  this.delete_account.click();
       return  await this.account_delete_msg.textContent();
     }
+
+
+    async navigateToContactUsPage(){
+        await this.contact_us_link.click();
+        return new ContactUsPage(this.page)   
+        
+    }
+
 }

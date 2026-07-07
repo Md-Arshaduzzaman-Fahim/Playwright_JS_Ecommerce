@@ -2,7 +2,7 @@ import { test, expect } from "./BaseTest";
 import{LoginPage} from "../Pages/LoginPage";
 import { SuccessfulAccountCreatePage } from "../Pages/SuccessfulAccountCreatePage";
 import users from "../Test-Data/users.json";
-
+import validationData from "../Test-Data/validationData.json";
 
 test.describe.configure({mode:"serial"});
 
@@ -18,17 +18,17 @@ await expect(await success_message_page.verifySuccessfulNavigationToHomePage()).
 
 
 test("Test Case 2: Login User with correct email and password", async({loggedHomepage})=>{
-    await expect(await loggedHomepage.verifySuccessfulLogin()).toBe("Gojo");
+    await expect(await loggedHomepage.verifySuccessfulLogin()).toBe(users.userInfo1.fname);
 
 })
 
 test("Test Case 3: Login User with incorrect email and password", async({loginpage})=>{
-    await expect(await loginpage.login(users.wrongUserCreds.email, users.wrongUserCreds.password)).toBe("Your email or password is incorrect!");
+    await expect(await loginpage.login(users.wrongUserCreds.email, users.wrongUserCreds.password)).toBe(validationData.incorrect_email_password_error_message);
 
 })
 
 test("Test Case 4: Logout User", async({loggedHomepage})=>{
-    await expect(await loggedHomepage.logout()).toBe("https://automationexercise.com/login");
+    await expect(await loggedHomepage.logout()).toBe(validationData.login_page_url);
 
 })
 
@@ -36,7 +36,7 @@ test("Test Case 4: Logout User", async({loggedHomepage})=>{
 
 
 test("Delete account", async({loggedHomepage})=>{
-    await expect(await loggedHomepage.deleteAccount()).toBe("Account Deleted!");
+    await expect(await loggedHomepage.deleteAccount()).toBe(validationData.account_deleted_confirmation_message);
 })
 
 

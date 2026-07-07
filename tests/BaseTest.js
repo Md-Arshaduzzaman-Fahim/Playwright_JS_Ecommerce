@@ -22,7 +22,14 @@ export const test = base.extend({
     loggedHomepage: async({loginpage}, use) =>{
         const loggedHomepage = await loginpage.login(users.signup1.email, users.userInfo1.password);
         await use(loggedHomepage);
+    },
+
+
+    contactpage: async({homepage}, use) => {
+        const contactpage = await homepage.navigateToContactUsPage();
+        await use(contactpage);
     }
+
 })
 
 
