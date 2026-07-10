@@ -1,5 +1,6 @@
-import{LoginPage} from "../Pages/LoginPage"
+import{LoginPage} from "./LoginPage"
 import { ContactUsPage } from "./ContactUsPage";
+import{ProductPage} from "./ProductPage";
 
 export class HomePage{
     constructor(page){
@@ -15,6 +16,8 @@ export class HomePage{
         this.account_delete_msg = this.page.locator("//h2/b[text()]");
 
         this.contact_us_link = this.page.getByRole("link", {name: " Contact us"});
+
+        this.product_page_link = this.page.getByRole("link", {name:" Products"});
     }
 
     async verifyTloginLink(){
@@ -48,6 +51,11 @@ export class HomePage{
         await this.contact_us_link.click();
         return new ContactUsPage(this.page)   
         
+    }
+
+    async navigateToProductPage(){
+        await this.product_page_link.click();
+        return new ProductPage(this.page);
     }
 
 }

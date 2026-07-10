@@ -1,0 +1,81 @@
+{
+
+    "product_page_title": "All Products",
+
+    "products": [
+       "Blue Top",
+       "Men Tshirt",
+       "Sleeveless Dress",
+       "Stylish Dress",
+       "Winter Top",
+       "Summer White Top",
+       "Madame Top For Women",
+       "Fancy Green Top"
+       
+],
+
+"product2": ["Sleeves Printed Top - White",
+       "Half Sleeves Top Schiffli Detailing - PinkT-Shirts",
+       "Frozen Tops For Kids",
+       "Full Sleeves Top Cherry - PinkDresses",
+       "Printed Off Shoulder Top - White",
+       "Sleeves Top and Short - Blue & Pink",
+       "Little Girls Mr. Panda Shirt",
+       "Sleeveless Unicorn Patch Gown - PinkPeople & Society",
+       "Cotton Mull Embroidered Dress",
+       "Blue Cotton Indie Mickey Dress",
+       "Long Maxi Tulle Fancy Dress Up Outfits -PinkApparel",
+       "Sleeveless Unicorn Print Fit & Flare Net Dress - MultiT-Shirts",
+       "Colour Blocked Shirt – Sky BlueTextiles & Nonwovens",
+       "Pure Cotton V-Neck T-Shirt",
+       "Green Side Placket Detail T-Shirt",
+       "Premium Polo T-Shirts",
+       "Pure Cotton Neon Green Tshirt",
+       "Soft Stretch Jeans",
+       "Regular Fit Straight Jeans",
+       "Grunt Blue Slim Fit Jeans",
+       "Rose Pink Embroidered Maxi Dress",
+       "Cotton Silk Hand Block Print Saree",
+       "Rust Red Linen Saree",
+       "Beautiful Peacock Blue Cotton Linen Saree",
+       "Lace Top For Women",
+       "GRAPHIC DESIGN MEN T SHIRT - BLUEDresses"] ,
+
+
+       "product1_info": {
+        "name": "Blue Top",
+        "price": "Rs. 500",
+        "category": "Category: Women > Tops",
+        "availability": "Availability: In Stock",
+        "condition": "Condition: New",
+        "brand": "Polo"
+       },
+
+
+       "category":["Women - Tops Products", "Men - Jeans Products"],
+
+       "brands":{
+        "polo": "Brand - Polo Products",
+        "h&m": "Brand - H&M Products",
+        "Madame": "Brand - Madame Products",
+        "Mast&arbour": "Brand - Mast & Harbour Products",
+        "Babyhug": "Brand -  Babyhug Products",
+        "Allen Solly Junior": "Brand - Allen Solly Junior Products",
+        "Kookie Kids": "Brand - Kookie Kids Products",
+        "Biba": "Brand - Biba Products"
+       },
+
+       "brandss":["Brand - Polo Products",
+         "Brand - H&M Products",
+         "Brand - Madame Products",
+         "Brand - Mast & Harbour Products",
+         "Brand - Babyhug Products",
+         "Brand - Allen Solly Junior Products",
+       "Brand - Kookie Kids Products",
+         "Brand - Biba Products"]
+
+
+
+
+       
+}

@@ -28,6 +28,11 @@ export const test = base.extend({
     contactpage: async({homepage}, use) => {
         const contactpage = await homepage.navigateToContactUsPage();
         await use(contactpage);
+    },
+
+    productpage: async({homepage}, use) =>{
+        const productpage = await homepage.navigateToProductPage();
+        await use(productpage);
     }
 
 })
