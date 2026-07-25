@@ -1,4 +1,5 @@
 import { ProductDetailPage } from "./ProductDetailPage";
+import { CartPage } from "./CartPage";
 export class ProductPage{
     constructor(page){
         this.page = page;
@@ -17,7 +18,22 @@ export class ProductPage{
          this.brands = this.page.locator("//h2[text()='Brands']/following-sibling::div/ul/li/a")
          this.brandss = this.page.locator("//div[@class='brands-name']/ul/li/a")
          
-          
+         this.continue_shopping_btn = this.page.getByRole("button",{name:"Continue Shopping"});
+         this.view_cart = this.page.locator("//a/u");
+
+
+         this.productDetails_quantity = this.page.locator("#quantity");
+         this.productDetails_addToCart = this.page.getByRole("button", {name:"Add to cart"});
+         this.product_page_link = this.page.getByRole("link", {name:" Products"});
+    }
+
+    getProduct(product){
+        return this.page.locator(`//div[@class='productinfo text-center']/p[text()='${product}']/following-sibling::a`);
+    }
+
+
+    getProductDetails(product){
+         return this.page.locator(`//div[@class='productinfo text-center']/p[text()='${product}']/../../following-sibling::div//a`);
     }
 
     async getProductPageTitle(){
@@ -83,6 +99,44 @@ export class ProductPage{
        return page_titles;
 
     }
+
+
+
+    async addToCart(products){
+        for(let i=0; i<products.length; i++){
+            await this.getProduct(products[i].name).click();
+            if(i == products.length-1){
+                await this.view_cart.click();
+                return new CartPage(this.page);
+            }
+            else{
+                await this.continue_shopping_btn.click();
+            }
+        }
+       
+    }
+
+
+
+    async addToCartQuantity(products){
+        for(let i=0; i<products.length; i++){
+            await this.getProductDetails(products[i].name).click();
+            await this.productDetails_quantity.clear();
+            await this.productDetails_quantity.fill(products[i].quantity);
+            await  this.productDetails_addToCart.click();
+            if(i == products.length-1){
+                await this.view_cart.click();
+                return new CartPage(this.page);
+            }
+            else{
+                await this.continue_shopping_btn.click();
+                await this.product_page_link.click()
+            }
+        }
+    }
+
+
+    
 
 
 

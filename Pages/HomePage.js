@@ -1,6 +1,7 @@
 import{LoginPage} from "./LoginPage"
 import { ContactUsPage } from "./ContactUsPage";
 import{ProductPage} from "./ProductPage";
+import { CartPage } from "./CartPage";
 
 export class HomePage{
     constructor(page){
@@ -18,6 +19,9 @@ export class HomePage{
         this.contact_us_link = this.page.getByRole("link", {name: " Contact us"});
 
         this.product_page_link = this.page.getByRole("link", {name:" Products"});
+
+        this.cart_page_link = this.page.getByRole("link", {name:" cart"});
+
     }
 
     async verifyTloginLink(){
@@ -57,5 +61,10 @@ export class HomePage{
         await this.product_page_link.click();
         return new ProductPage(this.page);
     }
+
+    async navigateToCartPage(){
+        await this.cart_page_link.click();
+        return new CartPage(this.page);
+    }    
 
 }

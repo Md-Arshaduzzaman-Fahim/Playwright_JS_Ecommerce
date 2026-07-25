@@ -33,8 +33,12 @@ export const test = base.extend({
     productpage: async({homepage}, use) =>{
         const productpage = await homepage.navigateToProductPage();
         await use(productpage);
-    }
+    },
 
+    cartpage: async({homepage}, use) =>{
+        const cartpage = await homepage.navigateToCartPage();
+        await use(cartpage);
+    }
 })
 
 

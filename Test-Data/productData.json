@@ -72,10 +72,18 @@
          "Brand - Babyhug Products",
          "Brand - Allen Solly Junior Products",
        "Brand - Kookie Kids Products",
-         "Brand - Biba Products"]
+         "Brand - Biba Products"],
 
 
 
+       "productsForCart":[
+        {"name":"Blue Top", "price":"Rs. 500", "quantity":"1", "totalPrice":"Rs. 500"},
+        {"name":"Winter Top", "price":"Rs. 600", "quantity":"1", "totalPrice":"Rs. 600"}
+       ],
 
+        "productsForCart2":[
+        {"name":"Blue Top", "price":"Rs. 500", "quantity":"5", "totalPrice":"Rs. 2500"},
+        {"name":"Winter Top", "price":"Rs. 600", "quantity":"3", "totalPrice":"Rs. 1800"}
+       ]
        
 }
